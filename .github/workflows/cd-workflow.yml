@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-lastest, windows-2016]
-        node-version: [12.x, 14.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v1
@@ -59,7 +59,7 @@ jobs:
         name: webpack artifacts
         path: public
     - name: Build container image
-      uses: docker/build-push-action@v1
+      uses: docker/build-push-action@v2
       with:
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
